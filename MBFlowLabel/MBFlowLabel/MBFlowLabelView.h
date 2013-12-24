@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBFlowLabelView : UIView <UIScrollViewDelegate>
+@interface MBFlowLabelView : UIView
 
 @property (assign, nonatomic) NSInteger itemCount;
 @property (assign, nonatomic) NSInteger contentOffset;
