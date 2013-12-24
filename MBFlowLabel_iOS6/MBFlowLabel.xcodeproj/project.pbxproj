@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE03CAF7186950EF00A8A399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CAF6186950EF00A8A399 /* Foundation.framework */; };
+		FE03CAF9186950EF00A8A399 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CAF8186950EF00A8A399 /* CoreGraphics.framework */; };
+		FE03CAFB186950EF00A8A399 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CAFA186950EF00A8A399 /* UIKit.framework */; };
+		FE03CB01186950EF00A8A399 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE03CAFF186950EF00A8A399 /* InfoPlist.strings */; };
+		FE03CB03186950EF00A8A399 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE03CB02186950EF00A8A399 /* main.m */; };
+		FE03CB07186950EF00A8A399 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE03CB06186950EF00A8A399 /* AppDelegate.m */; };
+		FE03CB0A186950EF00A8A399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE03CB08186950EF00A8A399 /* Main.storyboard */; };
+		FE03CB0D186950EF00A8A399 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE03CB0C186950EF00A8A399 /* DemoViewController.m */; };
+		FE03CB0F186950EF00A8A399 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE03CB0E186950EF00A8A399 /* Images.xcassets */; };
+		FE03CB16186950EF00A8A399 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CB15186950EF00A8A399 /* XCTest.framework */; };
+		FE03CB17186950EF00A8A399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CAF6186950EF00A8A399 /* Foundation.framework */; };
+		FE03CB18186950EF00A8A399 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE03CAFA186950EF00A8A399 /* UIKit.framework */; };
+		FE03CB20186950F000A8A399 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE03CB1E186950F000A8A399 /* InfoPlist.strings */; };
+		FE03CB22186950F000A8A399 /* MBFlowLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE03CB21186950F000A8A399 /* MBFlowLabelTests.m */; };
+		FE03CB301869555400A8A399 /* MBFlowLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE03CB2F1869555400A8A399 /* MBFlowLabelView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE03CB19186950F000A8A399 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE03CAEB186950EF00A8A399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE03CAF2186950EF00A8A399;
+			remoteInfo = MBFlowLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE03CAF3186950EF00A8A399 /* MBFlowLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBFlowLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE03CAF6186950EF00A8A399 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE03CAF8186950EF00A8A399 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE03CAFA186950EF00A8A399 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE03CAFE186950EF00A8A399 /* MBFlowLabel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MBFlowLabel-Info.plist"; sourceTree = "<group>"; };
+		FE03CB00186950EF00A8A399 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE03CB02186950EF00A8A399 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE03CB04186950EF00A8A399 /* MBFlowLabel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBFlowLabel-Prefix.pch"; sourceTree = "<group>"; };
+		FE03CB05186950EF00A8A399 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE03CB06186950EF00A8A399 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE03CB09186950EF00A8A399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE03CB0B186950EF00A8A399 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		FE03CB0C186950EF00A8A399 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		FE03CB0E186950EF00A8A399 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE03CB14186950EF00A8A399 /* MBFlowLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBFlowLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE03CB15186950EF00A8A399 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FE03CB1D186950F000A8A399 /* MBFlowLabelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MBFlowLabelTests-Info.plist"; sourceTree = "<group>"; };
+		FE03CB1F186950F000A8A399 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE03CB21186950F000A8A399 /* MBFlowLabelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBFlowLabelTests.m; sourceTree = "<group>"; };
+		FE03CB2E1869555400A8A399 /* MBFlowLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFlowLabelView.h; sourceTree = "<group>"; };
+		FE03CB2F1869555400A8A399 /* MBFlowLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFlowLabelView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE03CAF0186950EF00A8A399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CAF9186950EF00A8A399 /* CoreGraphics.framework in Frameworks */,
+				FE03CAFB186950EF00A8A399 /* UIKit.framework in Frameworks */,
+				FE03CAF7186950EF00A8A399 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE03CB11186950EF00A8A399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CB16186950EF00A8A399 /* XCTest.framework in Frameworks */,
+				FE03CB18186950EF00A8A399 /* UIKit.framework in Frameworks */,
+				FE03CB17186950EF00A8A399 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE03CAEA186950EF00A8A399 = {
+			isa = PBXGroup;
+			children = (
+				FE03CAFC186950EF00A8A399 /* MBFlowLabel */,
+				FE03CB1B186950F000A8A399 /* MBFlowLabelTests */,
+				FE03CAF5186950EF00A8A399 /* Frameworks */,
+				FE03CAF4186950EF00A8A399 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE03CAF4186950EF00A8A399 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CAF3186950EF00A8A399 /* MBFlowLabel.app */,
+				FE03CB14186950EF00A8A399 /* MBFlowLabelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE03CAF5186950EF00A8A399 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CAF6186950EF00A8A399 /* Foundation.framework */,
+				FE03CAF8186950EF00A8A399 /* CoreGraphics.framework */,
+				FE03CAFA186950EF00A8A399 /* UIKit.framework */,
+				FE03CB15186950EF00A8A399 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE03CAFC186950EF00A8A399 /* MBFlowLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CB05186950EF00A8A399 /* AppDelegate.h */,
+				FE03CB06186950EF00A8A399 /* AppDelegate.m */,
+				FE03CB08186950EF00A8A399 /* Main.storyboard */,
+				FE03CB0B186950EF00A8A399 /* DemoViewController.h */,
+				FE03CB0C186950EF00A8A399 /* DemoViewController.m */,
+				FE03CB2E1869555400A8A399 /* MBFlowLabelView.h */,
+				FE03CB2F1869555400A8A399 /* MBFlowLabelView.m */,
+				FE03CB0E186950EF00A8A399 /* Images.xcassets */,
+				FE03CAFD186950EF00A8A399 /* Supporting Files */,
+			);
+			path = MBFlowLabel;
+			sourceTree = "<group>";
+		};
+		FE03CAFD186950EF00A8A399 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CAFE186950EF00A8A399 /* MBFlowLabel-Info.plist */,
+				FE03CAFF186950EF00A8A399 /* InfoPlist.strings */,
+				FE03CB02186950EF00A8A399 /* main.m */,
+				FE03CB04186950EF00A8A399 /* MBFlowLabel-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE03CB1B186950F000A8A399 /* MBFlowLabelTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CB21186950F000A8A399 /* MBFlowLabelTests.m */,
+				FE03CB1C186950F000A8A399 /* Supporting Files */,
+			);
+			path = MBFlowLabelTests;
+			sourceTree = "<group>";
+		};
+		FE03CB1C186950F000A8A399 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE03CB1D186950F000A8A399 /* MBFlowLabelTests-Info.plist */,
+				FE03CB1E186950F000A8A399 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE03CAF2186950EF00A8A399 /* MBFlowLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE03CB25186950F000A8A399 /* Build configuration list for PBXNativeTarget "MBFlowLabel" */;
+			buildPhases = (
+				FE03CAEF186950EF00A8A399 /* Sources */,
+				FE03CAF0186950EF00A8A399 /* Frameworks */,
+				FE03CAF1186950EF00A8A399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBFlowLabel;
+			productName = MBFlowLabel;
+			productReference = FE03CAF3186950EF00A8A399 /* MBFlowLabel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE03CB13186950EF00A8A399 /* MBFlowLabelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE03CB28186950F000A8A399 /* Build configuration list for PBXNativeTarget "MBFlowLabelTests" */;
+			buildPhases = (
+				FE03CB10186950EF00A8A399 /* Sources */,
+				FE03CB11186950EF00A8A399 /* Frameworks */,
+				FE03CB12186950EF00A8A399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE03CB1A186950F000A8A399 /* PBXTargetDependency */,
+			);
+			name = MBFlowLabelTests;
+			productName = MBFlowLabelTests;
+			productReference = FE03CB14186950EF00A8A399 /* MBFlowLabelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE03CAEB186950EF00A8A399 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Semtle_men;
+				TargetAttributes = {
+					FE03CB13186950EF00A8A399 = {
+						TestTargetID = FE03CAF2186950EF00A8A399;
+					};
+				};
+			};
+			buildConfigurationList = FE03CAEE186950EF00A8A399 /* Build configuration list for PBXProject "MBFlowLabel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE03CAEA186950EF00A8A399;
+			productRefGroup = FE03CAF4186950EF00A8A399 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE03CAF2186950EF00A8A399 /* MBFlowLabel */,
+				FE03CB13186950EF00A8A399 /* MBFlowLabelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE03CAF1186950EF00A8A399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CB0F186950EF00A8A399 /* Images.xcassets in Resources */,
+				FE03CB01186950EF00A8A399 /* InfoPlist.strings in Resources */,
+				FE03CB0A186950EF00A8A399 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE03CB12186950EF00A8A399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CB20186950F000A8A399 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE03CAEF186950EF00A8A399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CB0D186950EF00A8A399 /* DemoViewController.m in Sources */,
+				FE03CB07186950EF00A8A399 /* AppDelegate.m in Sources */,
+				FE03CB301869555400A8A399 /* MBFlowLabelView.m in Sources */,
+				FE03CB03186950EF00A8A399 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE03CB10186950EF00A8A399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE03CB22186950F000A8A399 /* MBFlowLabelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE03CB1A186950F000A8A399 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE03CAF2186950EF00A8A399 /* MBFlowLabel */;
+			targetProxy = FE03CB19186950F000A8A399 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE03CAFF186950EF00A8A399 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE03CB00186950EF00A8A399 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE03CB08186950EF00A8A399 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE03CB09186950EF00A8A399 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE03CB1E186950F000A8A399 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE03CB1F186950F000A8A399 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE03CB23186950F000A8A399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE03CB24186950F000A8A399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE03CB26186950F000A8A399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBFlowLabel/MBFlowLabel-Prefix.pch";
+				INFOPLIST_FILE = "MBFlowLabel/MBFlowLabel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE03CB27186950F000A8A399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBFlowLabel/MBFlowLabel-Prefix.pch";
+				INFOPLIST_FILE = "MBFlowLabel/MBFlowLabel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FE03CB29186950F000A8A399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MBFlowLabel.app/MBFlowLabel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBFlowLabel/MBFlowLabel-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MBFlowLabelTests/MBFlowLabelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FE03CB2A186950F000A8A399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MBFlowLabel.app/MBFlowLabel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MBFlowLabel/MBFlowLabel-Prefix.pch";
+				INFOPLIST_FILE = "MBFlowLabelTests/MBFlowLabelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE03CAEE186950EF00A8A399 /* Build configuration list for PBXProject "MBFlowLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE03CB23186950F000A8A399 /* Debug */,
+				FE03CB24186950F000A8A399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE03CB25186950F000A8A399 /* Build configuration list for PBXNativeTarget "MBFlowLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE03CB26186950F000A8A399 /* Debug */,
+				FE03CB27186950F000A8A399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE03CB28186950F000A8A399 /* Build configuration list for PBXNativeTarget "MBFlowLabelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE03CB29186950F000A8A399 /* Debug */,
+				FE03CB2A186950F000A8A399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE03CAEB186950EF00A8A399 /* Project object */;
+}
