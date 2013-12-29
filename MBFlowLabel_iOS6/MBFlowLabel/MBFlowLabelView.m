@@ -8,6 +8,8 @@
 
 #import "MBFlowLabelView.h"
 
+#define STRING_PADDING 6
+
 @implementation MBFlowLabelView
 
 - (id)initWithFrame:(CGRect)frame
@@ -55,7 +57,7 @@
     
     if (width <= -(self.contentOffset)) {
         UILabel *tempLabel = [self getLabel];
-        [tempLabel setFrame:CGRectMake(self.textLabelSize.width, 0, self.textLabelSize.width, self.frame.size.height)];
+        [tempLabel setFrame:CGRectMake(self.textLabelSize.width+STRING_PADDING, 0, self.textLabelSize.width, self.frame.size.height)];
     }
     
     UILabel *tempLabel = [self.textLabelArray objectAtIndex:(self.itemCount)%2];
@@ -94,7 +96,7 @@
                     break;
                     
                 case 1:
-                    [flowLabel setFrame:CGRectMake(self.textLabelSize.width, 0, self.textLabelSize.width, self.frame.size.height)];
+                    [flowLabel setFrame:CGRectMake(self.textLabelSize.width+STRING_PADDING, 0, self.textLabelSize.width, self.frame.size.height)];
                     break;
                     
                 default:
