@@ -34,6 +34,7 @@
     MBFlowLabelView *flowLabel = [[MBFlowLabelView alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
     [flowLabel setText:@"abcdefghijklmnopqrstuvwxyz"];
     [self.view addSubview:flowLabel];
+    [flowLabel setText:@"Moonbeom Kyle KWON"];
     
     flowLabel = [[MBFlowLabelView alloc] initWithFrame:CGRectMake(100, 200, 100, 40)];
     [flowLabel setText:@"abcde"];
