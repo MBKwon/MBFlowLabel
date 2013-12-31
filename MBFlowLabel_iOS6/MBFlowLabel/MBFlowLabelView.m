@@ -9,6 +9,7 @@
 #import "MBFlowLabelView.h"
 
 #define STRING_PADDING 6
+#define FLOW_TIME_INTERVAL 0.1
 
 @implementation MBFlowLabelView
 
@@ -30,7 +31,6 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    
     self.contentOffset = 0;
     self.itemCount = 0;
     if ([self getTextSize].width > self.frame.size.width) {
@@ -38,7 +38,7 @@
         [self setLabel];
         [self setClipsToBounds:YES];
         
-        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(scrollingFlowText) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:FLOW_TIME_INTERVAL target:self selector:@selector(scrollingFlowText) userInfo:nil repeats:YES];
     } else {
         
         UILabel *staticLabel = [[UILabel alloc] init];
@@ -64,7 +64,7 @@
     self.contentOffset = tempLabel.frame.origin.x;
     
     for (UILabel *tempLabel in self.textLabelArray) {
-        [UIView animateWithDuration:0.1 animations:^ {
+        [UIView animateWithDuration:FLOW_TIME_INTERVAL animations:^ {
             
             CGRect currentRect = [tempLabel frame];
             currentRect.origin.x--;
@@ -103,6 +103,7 @@
                     break;
             }
             [flowLabel setText:self.text];
+            [flowLabel setTextColor:[UIColor whiteColor]];
             [flowLabel setBackgroundColor:[UIColor clearColor]];
             
             [self addSubview:flowLabel];
