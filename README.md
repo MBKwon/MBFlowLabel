@@ -4,7 +4,7 @@ MBFlowLabel
 set a longer string than MBFlowLabel's width, the string flow infinitely with a least memory usage on MBFlowLabel.
 
 #How to use
-Please refer to a [DemoViewController.m](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS7/MBFlowLabel/DemoViewController.m).If you are targeting either iOS7 and above, use [this](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS7). If you are not, use [another this]use [this](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS6)
+Please refer to a [DemoViewController.m](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS7/MBFlowLabel/DemoViewController.m). If you are targeting either iOS7 and above, use [this](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS7). If you are not, use [another this](https://github.com/MBKwon/MBFlowLabel/blob/master/MBFlowLabel_iOS6)
 
 # Feedback
 Always welcome your feedback, send me a email or comment here. I am always waiting for your feedback.
