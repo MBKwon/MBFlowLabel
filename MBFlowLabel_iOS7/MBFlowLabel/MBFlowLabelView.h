@@ -30,12 +30,10 @@
 
 @interface MBFlowLabelView : UIView
 
-@property (assign, nonatomic) NSInteger itemCount;
-@property (assign, nonatomic) NSInteger contentOffset;
-
-
-@property (assign, nonatomic) CGSize textLabelSize;
 @property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) NSMutableArray *textLabelArray;
+@property (strong, nonatomic) NSAttributedString *attributedText;
+
+@property (strong, nonatomic) UIFont *font;
+@property (strong, nonatomic) UIColor *textColor;
 
 @end
