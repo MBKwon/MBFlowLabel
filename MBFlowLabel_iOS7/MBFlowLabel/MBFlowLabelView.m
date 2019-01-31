@@ -56,7 +56,9 @@
         [self setLabel];
         [self setClipsToBounds:YES];
         
-        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(scrollingFlowText) userInfo:nil repeats:YES];
+        NSTimer * flowTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(scrollingFlowText) userInfo:nil repeats:YES];
+        [[NSRunLoop mainRunLoop] addTimer:flowTimer forMode:NSRunLoopCommonModes];
+        
     } else {
         
         UILabel *staticLabel = [[UILabel alloc] init];
