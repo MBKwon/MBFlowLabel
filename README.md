@@ -1,5 +1,6 @@
 MBFlowLabel
 ===========
+### pod 'MBFlowLabel', '~> 0.9.4'
 
 set a longer string than MBFlowLabel's width, the string flow infinitely with a least memory usage on MBFlowLabel.
 
