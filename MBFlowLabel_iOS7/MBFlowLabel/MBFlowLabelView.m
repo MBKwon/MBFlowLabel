@@ -31,7 +31,7 @@
 @interface MBFlowLabelView ()
 
 @property (assign, nonatomic) NSInteger itemCount;
-@property (assign, nonatomic) NSInteger contentOffset;
+@property (assign, nonatomic) double maxX;
 
 @property (assign, nonatomic) CGSize textLabelSize;
 @property (strong, nonatomic) NSMutableArray *textLabelArray;
@@ -64,7 +64,7 @@
 
 - (void)relayoutTextLabel {
     
-    self.contentOffset = 0;
+    self.maxX = CGFLOAT_MAX;
     self.itemCount = 0;
     
     if (self.flowTimer) {
@@ -116,16 +116,17 @@
 
 -(void)scrollingFlowText
 {
-    double labelWidth = ceil(self.textLabelSize.width);
+    CGFloat labelWidth = ceil(self.textLabelSize.width);
     
-    if (labelWidth <= -(self.contentOffset)) {
+    if (self.maxX <= self.frame.size.width) {
         UILabel *tempLabel = [self getLabel];
-        [tempLabel setFrame:CGRectMake(labelWidth, 0, labelWidth, self.frame.size.height)];
+        [tempLabel setFrame:CGRectMake(self.frame.size.width + self.textMargin, 0,
+                                       labelWidth, self.frame.size.height)];
     }
     
     if (self.textLabelArray != nil) {
         UILabel *tempLabel;
-        int index = (self.itemCount++) % 2;
+        int index = self.itemCount % 2;
         if (self.textLabelArray.count > index) {
             tempLabel = [self.textLabelArray objectAtIndex:index];
         }
@@ -134,13 +135,13 @@
             return;
         }
         
-        self.contentOffset = tempLabel.frame.origin.x;
-        for (UILabel *tempLabel in self.textLabelArray) {
+        self.maxX = tempLabel.frame.origin.x + labelWidth;
+        for (UILabel *contentLabel in self.textLabelArray) {
             [UIView animateWithDuration:0.1 animations:^ {
                 
-                CGRect currentRect = [tempLabel frame];
+                CGRect currentRect = [contentLabel frame];
                 currentRect.origin.x--;
-                [tempLabel setFrame:currentRect];
+                [contentLabel setFrame:currentRect];
             }];
         }
     }
@@ -213,7 +214,7 @@
 -(UILabel *)getLabel
 {
     if (self.textLabelArray != nil) {
-        int index = (self.itemCount++) % 2;
+        int index = (++self.itemCount) % 2;
         if (self.textLabelArray.count > index) {
             UILabel *tempLabel = [self.textLabelArray objectAtIndex:index];
             return tempLabel;
@@ -253,6 +254,7 @@
     for (UILabel * label in self.textLabelArray) {
         label.font = font;
     }
+    [self relayoutTextLabel];
 }
 
 -(void)setTextColor:(UIColor *)textColor {
@@ -260,6 +262,7 @@
     for (UILabel * label in self.textLabelArray) {
         label.textColor = textColor;
     }
+    [self relayoutTextLabel];
 }
 
 @end
