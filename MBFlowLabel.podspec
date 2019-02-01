@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name 	= 'MBFlowLabel'
-  s.version = '0.9.2'
+  s.version = '0.9.3'
   s.platform = :ios
   s.ios.deployment_target = '9.0'
   s.license = 'MIT License'
