@@ -32,12 +32,16 @@
     [super viewWillAppear:animated];
     
     MBFlowLabelView *flowLabel = [[MBFlowLabelView alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
-    [flowLabel setText:@"abcdefghijklmnopqrstuvwxyz"];
     [self.view addSubview:flowLabel];
+    [flowLabel setTextMargin:10.0];
+    [flowLabel setAttributedText:[[NSAttributedString alloc] initWithString:@"abcdefghijklmnopqrstuvwxyz"
+                                                                 attributes:@{NSForegroundColorAttributeName : UIColor.greenColor,
+                                                                              NSFontAttributeName : [UIFont systemFontOfSize:17.0],
+                                                                              NSKernAttributeName : @(-0.5)}]];
     
     flowLabel = [[MBFlowLabelView alloc] initWithFrame:CGRectMake(100, 200, 100, 40)];
-    [flowLabel setText:@"abcde"];
     [self.view addSubview:flowLabel];
+    [flowLabel setText:@"abcde"];
 }
 
 @end

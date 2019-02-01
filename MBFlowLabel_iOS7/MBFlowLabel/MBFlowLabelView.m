@@ -72,6 +72,12 @@
         self.flowTimer = nil;
     }
     
+    for (UILabel *label in self.textLabelArray) {
+        [label removeFromSuperview];
+    }
+    
+    [self.textLabelArray removeAllObjects];
+    
     if ([self getTextSize].width > self.frame.size.width) {
         
         [self setLabel];
@@ -99,6 +105,12 @@
         [staticLabel setTextAlignment:NSTextAlignmentCenter];
         [staticLabel setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         [self addSubview:staticLabel];
+        
+        if (!self.textLabelArray) {
+            self.textLabelArray = [NSMutableArray new];
+        }
+        
+        [self.textLabelArray addObject:staticLabel];
     }
 }
 
@@ -111,16 +123,26 @@
         [tempLabel setFrame:CGRectMake(labelWidth, 0, labelWidth, self.frame.size.height)];
     }
     
-    UILabel *tempLabel = [self.textLabelArray objectAtIndex:(self.itemCount)%2];
-    self.contentOffset = tempLabel.frame.origin.x;
-    
-    for (UILabel *tempLabel in self.textLabelArray) {
-        [UIView animateWithDuration:0.1 animations:^ {
-            
-            CGRect currentRect = [tempLabel frame];
-            currentRect.origin.x--;
-            [tempLabel setFrame:currentRect];
-        }];
+    if (self.textLabelArray != nil) {
+        UILabel *tempLabel;
+        int index = (self.itemCount++) % 2;
+        if (self.textLabelArray.count > index) {
+            tempLabel = [self.textLabelArray objectAtIndex:index];
+        }
+        
+        if (tempLabel == nil) {
+            return;
+        }
+        
+        self.contentOffset = tempLabel.frame.origin.x;
+        for (UILabel *tempLabel in self.textLabelArray) {
+            [UIView animateWithDuration:0.1 animations:^ {
+                
+                CGRect currentRect = [tempLabel frame];
+                currentRect.origin.x--;
+                [tempLabel setFrame:currentRect];
+            }];
+        }
     }
 }
 
@@ -143,46 +165,47 @@
 -(void)setLabel
 {
     if (self.textLabelArray == nil) {
-        
         self.textLabelArray = [NSMutableArray new];
-        UILabel *flowLabel;
+    }
+    
+    [self.textLabelArray removeAllObjects];
+    UILabel *flowLabel;
+    
+    for (int i =0; i<2; i++) {
         
-        for (int i =0; i<2; i++) {
-            
-            flowLabel = [[UILabel alloc] init];
-            [self addSubview:flowLabel];
-            [self.textLabelArray addObject:flowLabel];
-            
-            self.textLabelSize = [self getTextSize];
-            switch (i) {
-                case 0:
-                    [flowLabel setFrame:CGRectMake(0, 0,
-                                                   ceil(self.textLabelSize.width),
-                                                   self.frame.size.height)];
-                    break;
-                    
-                case 1:
-                    [flowLabel setFrame:CGRectMake(ceil(self.textLabelSize.width), 0,
-                                                   ceil(self.textLabelSize.width),
-                                                   self.frame.size.height)];
-                    break;
-                    
-                default:
-                    break;
-            }
-            
-            if (_text) {
-                [flowLabel setFont:_font];
-                [flowLabel setText:_text];
-                [flowLabel setTextColor:_textColor];
-            } else if (_attributedText) {
-                [flowLabel setAttributedText:_attributedText];
-            } else {
-                [flowLabel setFont:nil];
-                [flowLabel setText:nil];
-                [flowLabel setTextColor:nil];
-                [flowLabel setAttributedText:nil];
-            }
+        flowLabel = [[UILabel alloc] init];
+        [self addSubview:flowLabel];
+        [self.textLabelArray addObject:flowLabel];
+        
+        self.textLabelSize = [self getTextSize];
+        switch (i) {
+            case 0:
+                [flowLabel setFrame:CGRectMake(0, 0,
+                                               ceil(self.textLabelSize.width),
+                                               self.frame.size.height)];
+                break;
+                
+            case 1:
+                [flowLabel setFrame:CGRectMake(ceil(self.textLabelSize.width) + _textMargin, 0,
+                                               ceil(self.textLabelSize.width),
+                                               self.frame.size.height)];
+                break;
+                
+            default:
+                break;
+        }
+        
+        if (_text) {
+            [flowLabel setFont:_font];
+            [flowLabel setText:_text];
+            [flowLabel setTextColor:_textColor];
+        } else if (_attributedText) {
+            [flowLabel setAttributedText:_attributedText];
+        } else {
+            [flowLabel setFont:nil];
+            [flowLabel setText:nil];
+            [flowLabel setTextColor:nil];
+            [flowLabel setAttributedText:nil];
         }
     }
 }
@@ -190,12 +213,21 @@
 -(UILabel *)getLabel
 {
     if (self.textLabelArray != nil) {
-        UILabel *tempLabel = [self.textLabelArray objectAtIndex:(self.itemCount++)%2];
-        return tempLabel;
+        int index = (self.itemCount++) % 2;
+        if (self.textLabelArray.count > index) {
+            UILabel *tempLabel = [self.textLabelArray objectAtIndex:index];
+            return tempLabel;
+        }
+        return nil;
         
     } else {
         return nil;
     }
+}
+
+-(void)setTextMargin:(CGFloat)textMargin {
+    _textMargin = textMargin;
+    [self relayoutTextLabel];
 }
 
 -(void)setText:(NSString *)text {

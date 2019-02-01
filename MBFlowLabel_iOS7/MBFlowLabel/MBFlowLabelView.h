@@ -30,12 +30,14 @@
 
 @interface MBFlowLabelView : UIView
 
+@property (assign, nonatomic, readonly) CGFloat textMargin;
 @property (strong, nonatomic, readonly) NSString *text;
 @property (strong, nonatomic, readonly) NSAttributedString *attributedText;
 
 @property (strong, nonatomic, readonly) UIFont *font;
 @property (strong, nonatomic, readonly) UIColor *textColor;
 
+-(void)setTextMargin:(CGFloat)textMargin;
 -(void)setText:(NSString *)text;
 -(void)setAttributedText:(NSAttributedString *)attributedText;
 -(void)setFont:(UIFont *)font;
