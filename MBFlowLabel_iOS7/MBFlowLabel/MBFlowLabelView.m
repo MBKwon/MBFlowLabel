@@ -100,11 +100,11 @@
 
 -(void)scrollingFlowText
 {
-    int width = (int) self.textLabelSize.width;
+    double labelWidth = floor(self.textLabelSize.width);
     
-    if (width <= -(self.contentOffset)) {
+    if (labelWidth <= -(self.contentOffset)) {
         UILabel *tempLabel = [self getLabel];
-        [tempLabel setFrame:CGRectMake(self.textLabelSize.width, 0, self.textLabelSize.width, self.frame.size.height)];
+        [tempLabel setFrame:CGRectMake(labelWidth, 0, labelWidth, self.frame.size.height)];
     }
     
     UILabel *tempLabel = [self.textLabelArray objectAtIndex:(self.itemCount)%2];
@@ -187,6 +187,7 @@
 }
 
 -(void)setText:(NSString *)text {
+    _text = text;
     _attributedText = nil;
     for (UILabel * label in self.textLabelArray) {
         label.text = text;
@@ -196,6 +197,7 @@
 
 -(void)setAttributedText:(NSAttributedString *)attributedText {
     _text = nil;
+    _attributedText = attributedText;
     for (UILabel * label in self.textLabelArray) {
         label.attributedText = attributedText;
     }
@@ -203,12 +205,14 @@
 }
 
 -(void)setFont:(UIFont *)font {
+    _font = font;
     for (UILabel * label in self.textLabelArray) {
         label.font = font;
     }
 }
 
 -(void)setTextColor:(UIColor *)textColor {
+    _textColor = textColor;
     for (UILabel * label in self.textLabelArray) {
         label.textColor = textColor;
     }
