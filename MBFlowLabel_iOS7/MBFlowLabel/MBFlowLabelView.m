@@ -84,11 +84,15 @@
         
         UILabel *staticLabel = [[UILabel alloc] init];
         if (_text) {
+            [staticLabel setFont:_font];
             [staticLabel setText:_text];
+            [staticLabel setTextColor:_textColor];
         } else if (_attributedText) {
             [staticLabel setAttributedText:_attributedText];
         } else {
+            [staticLabel setFont:nil];
             [staticLabel setText:nil];
+            [staticLabel setTextColor:nil];
             [staticLabel setAttributedText:nil];
         }
         
@@ -100,7 +104,7 @@
 
 -(void)scrollingFlowText
 {
-    double labelWidth = floor(self.textLabelSize.width);
+    double labelWidth = ceil(self.textLabelSize.width);
     
     if (labelWidth <= -(self.contentOffset)) {
         UILabel *tempLabel = [self getLabel];
@@ -123,8 +127,12 @@
 -(CGSize)getTextSize
 {
     if (_text) {
-        UILabel *flowLabel = [[UILabel alloc] init];
-        return [self.text sizeWithAttributes:@{NSFontAttributeName:flowLabel.font}];
+        if (_font) {
+            return [self.text sizeWithAttributes:@{NSFontAttributeName:_font}];
+        } else {
+            UILabel *flowLabel = [[UILabel alloc] init];
+            return [self.text sizeWithAttributes:@{NSFontAttributeName:flowLabel.font}];
+        }
     } else if (_attributedText) {
         return _attributedText.size;
     }
@@ -137,22 +145,25 @@
     if (self.textLabelArray == nil) {
         
         self.textLabelArray = [NSMutableArray new];
+        UILabel *flowLabel;
         
         for (int i =0; i<2; i++) {
             
-            UILabel *flowLabel = [[UILabel alloc] init];
-            self.textLabelSize = [self.text sizeWithAttributes:@{NSFontAttributeName:flowLabel.font}];
+            flowLabel = [[UILabel alloc] init];
+            [self addSubview:flowLabel];
+            [self.textLabelArray addObject:flowLabel];
             
+            self.textLabelSize = [self getTextSize];
             switch (i) {
                 case 0:
                     [flowLabel setFrame:CGRectMake(0, 0,
-                                                   floor(self.textLabelSize.width),
+                                                   ceil(self.textLabelSize.width),
                                                    self.frame.size.height)];
                     break;
                     
                 case 1:
-                    [flowLabel setFrame:CGRectMake(floor(self.textLabelSize.width), 0,
-                                                   floor(self.textLabelSize.width),
+                    [flowLabel setFrame:CGRectMake(ceil(self.textLabelSize.width), 0,
+                                                   ceil(self.textLabelSize.width),
                                                    self.frame.size.height)];
                     break;
                     
@@ -161,16 +172,17 @@
             }
             
             if (_text) {
+                [flowLabel setFont:_font];
                 [flowLabel setText:_text];
+                [flowLabel setTextColor:_textColor];
             } else if (_attributedText) {
                 [flowLabel setAttributedText:_attributedText];
             } else {
+                [flowLabel setFont:nil];
                 [flowLabel setText:nil];
+                [flowLabel setTextColor:nil];
                 [flowLabel setAttributedText:nil];
             }
-            
-            [self addSubview:flowLabel];
-            [self.textLabelArray addObject:flowLabel];
         }
     }
 }
